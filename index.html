@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Velano Pass | Zero-Knowledge Vault</title>
+    
+    <!-- Android / PWA -->
+    <meta name="theme-color" content="#0f172a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Velano Pass">
+    <meta name="google" content="notranslate">
+    
+    <!-- iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Velano Pass">
+    <link rel="apple-touch-icon" href="favicon.ico">
+    
+    <link rel="manifest" href="./manifest.json">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                50: '#f0f9ff',
+                100: '#e0f2fe',
+                500: '#0ea5e9',
+                600: '#0284c7',
+                700: '#0369a1',
+                900: '#0c4a6e',
+              },
+              dark: {
+                800: '#1e293b',
+                900: '#0f172a',
+                950: '#020617',
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        background-color: #0f172a; /* Slate 900 */
+        color: #f8fafc;
+        
+        /* SECURITY: Prevent Text Selection to hinder copying */
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        /* NATIVE APP FEEL */
+        overscroll-behavior-y: none;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+        
+        /* EXTENSION MODE: Ensure minimum size for popup */
+        min-width: 350px;
+        min-height: 500px;
+        overflow: hidden; /* App handles scrolling internally */
+        
+        /* Mobile Safe Area */
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+      
+      html {
+        overscroll-behavior-y: none;
+      }
+      
+      /* SECURITY: Hide content when printing or saving as PDF */
+      @media print {
+          body { display: none !important; }
+          html::after {
+              content: "Velano Security: Content Protected. Printing disabled.";
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 100vh;
+              font-size: 24pt;
+              color: #000;
+          }
+      }
+
+      /* Custom scrollbar for cyber aesthetic */
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      * {
+        scrollbar-width: none;
+      }
+      
+      /* Fix for Chrome/Edge Autofill Background */
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover, 
+      input:-webkit-autofill:focus, 
+      input:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 30px #020617 inset !important;
+        -webkit-text-fill-color: white !important;
+        caret-color: white !important;
+        transition: background-color 5000s ease-in-out 0s;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.564.0",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "@emailjs/browser": "https://esm.sh/@emailjs/browser@3.11.0",
+    "react-qr-code": "https://esm.sh/react-qr-code@2.0.15"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <!-- SECURITY: Disable Right Click Context Menu -->
+  <body oncontextmenu="return false;">
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

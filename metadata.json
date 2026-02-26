@@ -1,0 +1,5 @@
+{
+  "name": "Velano Pass",
+  "description": "A zero-knowledge, end-to-end encrypted password manager vault. Features client-side AES-256-GCM encryption, secure key derivation, and a modern dashboard UI.",
+  "requestFramePermissions": []
+}
