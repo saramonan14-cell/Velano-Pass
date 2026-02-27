@@ -16,4 +16,4 @@ root.render(
 );
 
 // Register the service worker for offline capabilities (Android PWA)
-serviceWorkerRegistration.register();
+serviceWorkerRegistration.unregister();
